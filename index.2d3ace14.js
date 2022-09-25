@@ -27111,157 +27111,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Router":"7HB0g"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("react-refresh/runtime");
-function debounce(func, delay) {
-    var args;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + " %exports% " + key);
-    }
-}
-
-},{"react-refresh/runtime":"786KC"}],"7HB0g":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Router":"7HB0g","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7HB0g":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4df9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27296,12 +27146,12 @@ const Router = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
                 fileName: "src/Router.tsx",
                 lineNumber: 17,
-                columnNumber: 9
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/",
+                        path: "/TechApp",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27309,7 +27159,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/task1",
+                        path: "/TechApp/task1",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task1Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27317,7 +27167,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/task2",
+                        path: "/TechApp/task2",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task2Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27325,7 +27175,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/task3",
+                        path: "/TechApp/task3",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task3Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27333,7 +27183,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/task4",
+                        path: "/TechApp/task4",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task4Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27341,7 +27191,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/task5",
+                        path: "/TechApp/task5",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task5Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27349,7 +27199,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/task6",
+                        path: "/TechApp/task6",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task6Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27379,7 +27229,7 @@ $RefreshReg$(_c, "Router");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Navbar/Navbar":"hITIp","./pages/Task1":"jSz1l","./pages/Task2":"4ceKg","./pages/Task3":"gjAnR","./pages/Task4":"hsUqa","./pages/Task5":"lb3WU","./pages/Task6":"6uQ1g","./pages/Home":"dnirJ"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./components/Navbar/Navbar":"hITIp","./pages/Home":"dnirJ","./pages/Task1":"jSz1l","./pages/Task2":"4ceKg","./pages/Task3":"gjAnR","./pages/Task4":"hsUqa","./pages/Task5":"lb3WU","./pages/Task6":"6uQ1g","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AbortedDeferredError", ()=>(0, _reactRouter.AbortedDeferredError));
@@ -31566,7 +31416,37 @@ function createURL(location) {
     return new URL(href, base);
 } //#endregion
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hITIp":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"hITIp":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a2a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31588,7 +31468,7 @@ const Navbar = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-logo",
-                    to: "/",
+                    to: "/TechApp",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "navbar-logo",
                         src: (0, _logoSvgDefault.default),
@@ -31605,7 +31485,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/",
+                    to: "/TechApp",
                     children: "Главная"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31614,7 +31494,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/task1",
+                    to: "/TechApp/task1",
                     children: "Задание 1"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31623,7 +31503,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/task2",
+                    to: "/TechApp/task2",
                     children: "Задание 2"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31632,7 +31512,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/task3",
+                    to: "/TechApp/task3",
                     children: "Задание 3"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31641,7 +31521,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/task4",
+                    to: "/TechApp/task4",
                     children: "Задание 4"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31650,7 +31530,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/task5",
+                    to: "/TechApp/task5",
                     children: "Задание 5"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31659,7 +31539,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/task6",
+                    to: "/TechApp/task6",
                     children: "Задание 6"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31688,7 +31568,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../../../public/icons/logo.svg":"3IVdr"}],"3IVdr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../../public/icons/logo.svg":"3IVdr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3IVdr":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "logo.138966c6.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -31725,7 +31605,350 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"jSz1l":[function(require,module,exports) {
+},{}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("react-refresh/runtime");
+function debounce(func, delay) {
+    var args;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + " %exports% " + key);
+    }
+}
+
+},{"react-refresh/runtime":"786KC"}],"dnirJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c258 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c258.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _import = require("../components/import");
+const Home = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container f1",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "block",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "logo-size",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: _import.reactlogo,
+                            alt: ""
+                        }, void 0, false, {
+                            fileName: "src/pages/Home.tsx",
+                            lineNumber: 11,
+                            columnNumber: 25
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/pages/Home.tsx",
+                        lineNumber: 10,
+                        columnNumber: 21
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "src/pages/Home.tsx",
+                        lineNumber: 13,
+                        columnNumber: 21
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        className: "text-center ",
+                        children: "Список задач"
+                    }, void 0, false, {
+                        fileName: "src/pages/Home.tsx",
+                        lineNumber: 14,
+                        columnNumber: 21
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ol", {
+                        className: "rectangle",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/TechApp/task1",
+                                    children: "Слайд-шоу"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 16,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 16,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/TechApp/task2",
+                                    children: "Неизвестно"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 17,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 17,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/TechApp/task3",
+                                    children: "Неизвестно"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 18,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 18,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/TechApp/task4",
+                                    children: "Неизвестно"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 19,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 19,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/TechApp/task5",
+                                    children: "Неизвестно"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 20,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 20,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/TechApp/task6",
+                                    children: "О себе"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 21,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 21,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/pages/Home.tsx",
+                        lineNumber: 15,
+                        columnNumber: 21
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/pages/Home.tsx",
+                lineNumber: 9,
+                columnNumber: 17
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/pages/Home.tsx",
+            lineNumber: 8,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false);
+};
+_c = Home;
+exports.default = Home;
+var _c;
+$RefreshReg$(_c, "Home");
+
+  $parcel$ReactRefreshHelpers$c258.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../components/import":"fdk8W","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fdk8W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "image1", ()=>(0, _01JpgDefault.default));
+parcelHelpers.export(exports, "image2", ()=>(0, _02JpgDefault.default));
+parcelHelpers.export(exports, "image3", ()=>(0, _03JpgDefault.default));
+parcelHelpers.export(exports, "image4", ()=>(0, _04JpgDefault.default));
+parcelHelpers.export(exports, "image5", ()=>(0, _05JpgDefault.default));
+parcelHelpers.export(exports, "image6", ()=>(0, _06JpgDefault.default));
+parcelHelpers.export(exports, "arrow", ()=>(0, _arrowSvgDefault.default));
+parcelHelpers.export(exports, "reactlogo", ()=>(0, _reactIconSvgDefault.default));
+parcelHelpers.export(exports, "avatar", ()=>(0, _avatarJpgDefault.default));
+var _01Jpg = require("../../public/img/01.jpg");
+var _01JpgDefault = parcelHelpers.interopDefault(_01Jpg);
+var _02Jpg = require("../../public/img/02.jpg");
+var _02JpgDefault = parcelHelpers.interopDefault(_02Jpg);
+var _03Jpg = require("../../public/img/03.jpg");
+var _03JpgDefault = parcelHelpers.interopDefault(_03Jpg);
+var _04Jpg = require("../../public/img/04.jpg");
+var _04JpgDefault = parcelHelpers.interopDefault(_04Jpg);
+var _05Jpg = require("../../public/img/05.jpg");
+var _05JpgDefault = parcelHelpers.interopDefault(_05Jpg);
+var _06Jpg = require("../../public/img/06.jpg");
+var _06JpgDefault = parcelHelpers.interopDefault(_06Jpg);
+var _arrowSvg = require("../../public/icons/arrow.svg");
+var _arrowSvgDefault = parcelHelpers.interopDefault(_arrowSvg);
+var _reactIconSvg = require("../../public/icons/React-icon.svg");
+var _reactIconSvgDefault = parcelHelpers.interopDefault(_reactIconSvg);
+var _avatarJpg = require("../../public/img/avatar.jpg");
+var _avatarJpgDefault = parcelHelpers.interopDefault(_avatarJpg);
+
+},{"../../public/img/01.jpg":"2ch9w","../../public/img/02.jpg":"1fNTz","../../public/img/03.jpg":"9geSl","../../public/img/04.jpg":"a1AhO","../../public/img/05.jpg":"4pmQx","../../public/img/06.jpg":"cdxXO","../../public/icons/arrow.svg":"ellWI","../../public/icons/React-icon.svg":"jSj6m","../../public/img/avatar.jpg":"1oLnt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2ch9w":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "01.3885ebe0.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"1fNTz":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "02.0ecb816c.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"9geSl":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "03.e70e1218.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"a1AhO":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "04.40d666ea.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"4pmQx":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "05.0d03568e.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"cdxXO":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "06.99bec80a.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"ellWI":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "arrow.de242c13.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"jSj6m":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "React-icon.0d13d31a.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"1oLnt":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "avatar.e87bddae.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"jSz1l":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$634c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31895,65 +32118,7 @@ $RefreshReg$(_c, "Slide");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../import":"fdk8W","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fdk8W":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "image1", ()=>(0, _01JpgDefault.default));
-parcelHelpers.export(exports, "image2", ()=>(0, _02JpgDefault.default));
-parcelHelpers.export(exports, "image3", ()=>(0, _03JpgDefault.default));
-parcelHelpers.export(exports, "image4", ()=>(0, _04JpgDefault.default));
-parcelHelpers.export(exports, "image5", ()=>(0, _05JpgDefault.default));
-parcelHelpers.export(exports, "image6", ()=>(0, _06JpgDefault.default));
-parcelHelpers.export(exports, "arrow", ()=>(0, _arrowSvgDefault.default));
-parcelHelpers.export(exports, "reactlogo", ()=>(0, _reactIconSvgDefault.default));
-parcelHelpers.export(exports, "avatar", ()=>(0, _avatarJpgDefault.default));
-var _01Jpg = require("../../public/img/01.jpg");
-var _01JpgDefault = parcelHelpers.interopDefault(_01Jpg);
-var _02Jpg = require("../../public/img/02.jpg");
-var _02JpgDefault = parcelHelpers.interopDefault(_02Jpg);
-var _03Jpg = require("../../public/img/03.jpg");
-var _03JpgDefault = parcelHelpers.interopDefault(_03Jpg);
-var _04Jpg = require("../../public/img/04.jpg");
-var _04JpgDefault = parcelHelpers.interopDefault(_04Jpg);
-var _05Jpg = require("../../public/img/05.jpg");
-var _05JpgDefault = parcelHelpers.interopDefault(_05Jpg);
-var _06Jpg = require("../../public/img/06.jpg");
-var _06JpgDefault = parcelHelpers.interopDefault(_06Jpg);
-var _arrowSvg = require("../../public/icons/arrow.svg");
-var _arrowSvgDefault = parcelHelpers.interopDefault(_arrowSvg);
-var _reactIconSvg = require("../../public/icons/React-icon.svg");
-var _reactIconSvgDefault = parcelHelpers.interopDefault(_reactIconSvg);
-var _avatarJpg = require("../../public/img/avatar.jpg");
-var _avatarJpgDefault = parcelHelpers.interopDefault(_avatarJpg);
-
-},{"../../public/img/01.jpg":"2ch9w","../../public/img/02.jpg":"1fNTz","../../public/img/03.jpg":"9geSl","../../public/img/04.jpg":"a1AhO","../../public/img/05.jpg":"4pmQx","../../public/img/06.jpg":"cdxXO","../../public/icons/arrow.svg":"ellWI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../public/icons/React-icon.svg":"jSj6m","../../public/img/avatar.jpg":"1oLnt"}],"2ch9w":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "01.3885ebe0.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"1fNTz":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "02.0ecb816c.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"9geSl":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "03.e70e1218.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"a1AhO":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "04.40d666ea.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"4pmQx":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "05.0d03568e.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"cdxXO":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "06.99bec80a.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"ellWI":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "arrow.de242c13.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"jSj6m":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "React-icon.0d13d31a.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"1oLnt":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "avatar.e87bddae.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"4ceKg":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../import":"fdk8W","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ceKg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$eaa0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32173,171 +32338,6 @@ $RefreshReg$(_c, "Task6");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/import":"fdk8W"}],"dnirJ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c258 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c258.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _import = require("../components/import");
-const Home = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container f1",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "block",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "logo-size",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: _import.reactlogo,
-                            alt: ""
-                        }, void 0, false, {
-                            fileName: "src/pages/Home.tsx",
-                            lineNumber: 11,
-                            columnNumber: 25
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/pages/Home.tsx",
-                        lineNumber: 10,
-                        columnNumber: 21
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                        fileName: "src/pages/Home.tsx",
-                        lineNumber: 13,
-                        columnNumber: 21
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        className: "text-center ",
-                        children: "Список задач"
-                    }, void 0, false, {
-                        fileName: "src/pages/Home.tsx",
-                        lineNumber: 14,
-                        columnNumber: 21
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ol", {
-                        className: "rectangle",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task1",
-                                    children: "Слайд-шоу"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 16,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 16,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task2",
-                                    children: "Неизвестно"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 17,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 17,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task3",
-                                    children: "Неизвестно"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 18,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 18,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task4",
-                                    children: "Неизвестно"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 19,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 19,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task5",
-                                    children: "Неизвестно"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 20,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 20,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task6",
-                                    children: "О себе"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 21,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 21,
-                                columnNumber: 25
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/Home.tsx",
-                        lineNumber: 15,
-                        columnNumber: 21
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/Home.tsx",
-                lineNumber: 9,
-                columnNumber: 17
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/pages/Home.tsx",
-            lineNumber: 8,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false);
-};
-_c = Home;
-exports.default = Home;
-var _c;
-$RefreshReg$(_c, "Home");
-
-  $parcel$ReactRefreshHelpers$c258.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../components/import":"fdk8W"}]},["1xC6H","6FqiZ","4aBH6"], "4aBH6", "parcelRequire9538")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../components/import":"fdk8W","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","6FqiZ","4aBH6"], "4aBH6", "parcelRequire9538")
 
 //# sourceMappingURL=index.2d3ace14.js.map
