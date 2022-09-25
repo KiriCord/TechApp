@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #5a8bb0 0%, #3c5d76 100%);
+}
+
+.navbar {
+  background-color: #1e2e3b;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  box-shadow: 0 5px 5px -5px #223c5099;
+}
+
+.navbar-item {
+  color: #fff;
+  float: left;
+  border-right: 1px solid #bbb;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color .5s;
+  display: block;
+}
+
+.navbar-item:last-child {
+  border-right: none;
+}
+
+.navbar-item:hover, .active {
+  color: #1e2e3b;
+  background-color: #5a8bb0;
+  transition: background-color .5s;
+}
+
+.navbar-logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 30px;
+  padding: 0 15px;
+}
+
+.slideshow {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slideshow-container {
+  justify-content: center;
+  display: flex;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: all 1s;
+}
+
+.arrow {
+  z-index: 1000;
+  filter: invert();
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.arrow-right {
+  right: 2%;
+}
+
+.arrow-left {
+  transform-origin: center;
+  left: 2%;
+  transform: translate(0, -50%)rotate(180deg);
+}
+
+.slide {
+  object-fit: cover;
+  height: 600px;
+  width: 100%;
+  display: inline-block;
+  box-shadow: 5px 5px 5px -5px #223c5099;
+}
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  height: 10px;
+  width: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  margin: 15px 7px 0;
+  display: inline-block;
+}
+
+.slideshowDot.active {
+  background-color: #1e2e3b;
+}
+
+.logo-size {
+  max-height: 50%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5% 0;
+  transition: transform .8s ease-in-out;
+}
+
+.logo-size:hover {
+  transform: rotate(360deg);
+}
+
+/*# sourceMappingURL=index.40346e3a.css.map */
