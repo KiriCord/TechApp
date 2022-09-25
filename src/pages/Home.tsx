@@ -7,11 +7,13 @@ const Home = () => {
         <>
             <div className='container f1'>
                 <div className='block'>
+                    <h3 className='text-center '>Лабораторная работа по Современным компьютерным технологиям</h3>
+                    <hr />
                     <div className="logo-size">
                         <img src={img.reactlogo} alt="" />
                     </div>
                     <hr />
-                    <h3 className='text-center '>Список задач</h3>
+                    <h3 className='text-center'>Список задач</h3>
                     <ol className='rectangle'>
                         <li><Link to="/task1">Слайд-шоу</Link></li>
                         <li><Link to="/task2">Неизвестно</Link></li>

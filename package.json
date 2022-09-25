@@ -1,16 +1,21 @@
 {
   "name": "techapp",
   "version": "1.0.0",
+  "private": true,
+  "homepage": "https://kiricord.github.io/TechApp/",
   "description": "",
   "source": "public/index.html",
   "scripts": {
     "start": "parcel serve --open",
-    "build": "parcel build"
+    "build": "parcel build public/index.html --public-url https://kiricord.github.io/TechApp/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "yarn build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0"

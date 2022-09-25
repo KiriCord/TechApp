@@ -31,31 +31,38 @@ const Slide = () => {
 
   return (
     <div className="slideshow-container">
-      <div className="slideshow">
-        <div
-          className="arrow arrow-right"
-          style={{ backgroundImage: `url(${img.arrow})` }}
-          onClick={() => {
-            setIndex(index < images.length - 1 ? index + 1 : 0);
-          }}>
-        </div>
-        <div
-          className="arrow arrow-left"
-          style={{ backgroundImage: `url(${img.arrow})` }}
-          onClick={() => {
-            setIndex(index < 1 ? images.length - 1 : index - 1);
-          }}></div>
+      <div className="slide-column">
+        <div className="slideshow">
+          <div className="slide-arrow-container">
+            <div className="slidefull slidefull-left"
+              onClick={() => {
+                setIndex(index < 1 ? images.length - 1 : index - 1);
+              }}>
+              <div
+                className="arrow arrow-left"
+                style={{ backgroundImage: `url(${img.arrow})` }}></div>
+            </div>
+            <div className="slidefull slidefull-right"
+              onClick={() => {
+                setIndex(index < images.length - 1 ? index + 1 : 0);
+              }}>
+              <div
+                className="arrow arrow-right"
+                style={{ backgroundImage: `url(${img.arrow})` }}>
+              </div>
+            </div>
+          </div>
+          <div
+            className="slideshowSlider"
+            style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          >
 
-        <div
-          className="slideshowSlider"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-        >
 
+            {images.map((backgroundColor, index) => (
+              <img className="slide" key={index} style={{ backgroundColor }} src={backgroundColor} alt="" />
+            ))}
 
-          {images.map((backgroundColor, index) => (
-            <img className="slide" key={index} style={{ backgroundColor }} src={backgroundColor} alt="" />
-          ))}
-
+          </div>
         </div>
         <div className="slideshowDots">
           {images.map((_, idx) => (
@@ -67,8 +74,6 @@ const Slide = () => {
               }}
             ></div>
           ))}
-        </div>
-        <div>
         </div>
       </div>
     </div>
