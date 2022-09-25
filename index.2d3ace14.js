@@ -27141,7 +27141,7 @@ var _task5Default = parcelHelpers.interopDefault(_task5);
 var _task6 = require("./pages/Task6");
 var _task6Default = parcelHelpers.interopDefault(_task6);
 const Router = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.HashRouter), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {}, void 0, false, {
                 fileName: "src/Router.tsx",
@@ -27151,7 +27151,7 @@ const Router = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp",
+                        path: "/",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27159,7 +27159,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp/task1",
+                        path: "/task1",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task1Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27167,7 +27167,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp/task2",
+                        path: "/task2",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task2Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27175,7 +27175,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp/task3",
+                        path: "/task3",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task3Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27183,7 +27183,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp/task4",
+                        path: "/task4",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task4Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27191,7 +27191,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp/task5",
+                        path: "/task5",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task5Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -27199,7 +27199,7 @@ const Router = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/TechApp/task6",
+                        path: "/task6",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _task6Default.default), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/Router.tsx",
@@ -31468,7 +31468,7 @@ const Navbar = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-logo",
-                    to: "/TechApp",
+                    to: "/",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "navbar-logo",
                         src: (0, _logoSvgDefault.default),
@@ -31485,7 +31485,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp",
+                    to: "/",
                     children: "Главная"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31494,7 +31494,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp/task1",
+                    to: "/task1",
                     children: "Задание 1"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31503,7 +31503,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp/task2",
+                    to: "/task2",
                     children: "Задание 2"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31512,7 +31512,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp/task3",
+                    to: "/task3",
                     children: "Задание 3"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31521,7 +31521,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp/task4",
+                    to: "/task4",
                     children: "Задание 4"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31530,7 +31530,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp/task5",
+                    to: "/task5",
                     children: "Задание 5"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31539,7 +31539,7 @@ const Navbar = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "navbar-item",
-                    to: "/TechApp/task6",
+                    to: "/task6",
                     children: "Задание 6"
                 }, void 0, false, {
                     fileName: "src/components/Navbar/Navbar.tsx",
@@ -31779,7 +31779,7 @@ const Home = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/TechApp/task1",
+                                    to: "/task1",
                                     children: "Слайд-шоу"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31793,7 +31793,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/TechApp/task2",
+                                    to: "/task2",
                                     children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31807,7 +31807,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/TechApp/task3",
+                                    to: "/task3",
                                     children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31821,7 +31821,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/TechApp/task4",
+                                    to: "/task4",
                                     children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31835,7 +31835,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/TechApp/task5",
+                                    to: "/task5",
                                     children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31849,7 +31849,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/TechApp/task6",
+                                    to: "/task6",
                                     children: "О себе"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
