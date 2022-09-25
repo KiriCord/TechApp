@@ -31746,16 +31746,9 @@ const Home = ()=>{
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "block",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "logo-size",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: _import.reactlogo,
-                            alt: ""
-                        }, void 0, false, {
-                            fileName: "src/pages/Home.tsx",
-                            lineNumber: 11,
-                            columnNumber: 25
-                        }, undefined)
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        className: "text-center ",
+                        children: "Лабораторная работа по Современным компьютерным технологиям"
                     }, void 0, false, {
                         fileName: "src/pages/Home.tsx",
                         lineNumber: 10,
@@ -31763,15 +31756,35 @@ const Home = ()=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "src/pages/Home.tsx",
-                        lineNumber: 13,
+                        lineNumber: 11,
+                        columnNumber: 21
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "logo-size",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: _import.reactlogo,
+                            alt: ""
+                        }, void 0, false, {
+                            fileName: "src/pages/Home.tsx",
+                            lineNumber: 13,
+                            columnNumber: 25
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/pages/Home.tsx",
+                        lineNumber: 12,
+                        columnNumber: 21
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "src/pages/Home.tsx",
+                        lineNumber: 15,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        className: "text-center ",
+                        className: "text-center",
                         children: "Список задач"
                     }, void 0, false, {
                         fileName: "src/pages/Home.tsx",
-                        lineNumber: 14,
+                        lineNumber: 16,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ol", {
@@ -31781,34 +31794,6 @@ const Home = ()=>{
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                     to: "/task1",
                                     children: "Слайд-шоу"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 16,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 16,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task2",
-                                    children: "Неизвестно"
-                                }, void 0, false, {
-                                    fileName: "src/pages/Home.tsx",
-                                    lineNumber: 17,
-                                    columnNumber: 29
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/pages/Home.tsx",
-                                lineNumber: 17,
-                                columnNumber: 25
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task3",
-                                    children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
                                     lineNumber: 18,
@@ -31821,7 +31806,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task4",
+                                    to: "/task2",
                                     children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31835,7 +31820,7 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task5",
+                                    to: "/task3",
                                     children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
@@ -31849,8 +31834,8 @@ const Home = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/task6",
-                                    children: "О себе"
+                                    to: "/task4",
+                                    children: "Неизвестно"
                                 }, void 0, false, {
                                     fileName: "src/pages/Home.tsx",
                                     lineNumber: 21,
@@ -31860,11 +31845,39 @@ const Home = ()=>{
                                 fileName: "src/pages/Home.tsx",
                                 lineNumber: 21,
                                 columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/task5",
+                                    children: "Неизвестно"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 22,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 22,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/task6",
+                                    children: "О себе"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Home.tsx",
+                                    lineNumber: 23,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/pages/Home.tsx",
+                                lineNumber: 23,
+                                columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/Home.tsx",
-                        lineNumber: 15,
+                        lineNumber: 17,
                         columnNumber: 21
                     }, undefined)
                 ]
@@ -32023,54 +32036,86 @@ const Slide = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "slideshow-container",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "slideshow",
+            className: "slide-column",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "arrow arrow-right",
-                    style: {
-                        backgroundImage: `url(${_import.arrow})`
-                    },
-                    onClick: ()=>{
-                        setIndex(index < images.length - 1 ? index + 1 : 0);
-                    }
-                }, void 0, false, {
+                    className: "slideshow",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "slide-arrow-container",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "slidefull slidefull-left",
+                                    onClick: ()=>{
+                                        setIndex(index < 1 ? images.length - 1 : index - 1);
+                                    },
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "arrow arrow-left",
+                                        style: {
+                                            backgroundImage: `url(${_import.arrow})`
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "src/components/Slide/Slide.tsx",
+                                        lineNumber: 41,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/Slide/Slide.tsx",
+                                    lineNumber: 37,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "slidefull slidefull-right",
+                                    onClick: ()=>{
+                                        setIndex(index < images.length - 1 ? index + 1 : 0);
+                                    },
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "arrow arrow-right",
+                                        style: {
+                                            backgroundImage: `url(${_import.arrow})`
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "src/components/Slide/Slide.tsx",
+                                        lineNumber: 49,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/Slide/Slide.tsx",
+                                    lineNumber: 45,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/Slide/Slide.tsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "slideshowSlider",
+                            style: {
+                                transform: `translate3d(${-index * 100}%, 0, 0)`
+                            },
+                            children: images.map((backgroundColor, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    className: "slide",
+                                    style: {
+                                        backgroundColor
+                                    },
+                                    src: backgroundColor,
+                                    alt: ""
+                                }, index, false, {
+                                    fileName: "src/components/Slide/Slide.tsx",
+                                    lineNumber: 62,
+                                    columnNumber: 15
+                                }, undefined))
+                        }, void 0, false, {
+                            fileName: "src/components/Slide/Slide.tsx",
+                            lineNumber: 55,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
                     fileName: "src/components/Slide/Slide.tsx",
                     lineNumber: 35,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "arrow arrow-left",
-                    style: {
-                        backgroundImage: `url(${_import.arrow})`
-                    },
-                    onClick: ()=>{
-                        setIndex(index < 1 ? images.length - 1 : index - 1);
-                    }
-                }, void 0, false, {
-                    fileName: "src/components/Slide/Slide.tsx",
-                    lineNumber: 42,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "slideshowSlider",
-                    style: {
-                        transform: `translate3d(${-index * 100}%, 0, 0)`
-                    },
-                    children: images.map((backgroundColor, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "slide",
-                            style: {
-                                backgroundColor
-                            },
-                            src: backgroundColor,
-                            alt: ""
-                        }, index, false, {
-                            fileName: "src/components/Slide/Slide.tsx",
-                            lineNumber: 56,
-                            columnNumber: 13
-                        }, undefined))
-                }, void 0, false, {
-                    fileName: "src/components/Slide/Slide.tsx",
-                    lineNumber: 49,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32082,17 +32127,12 @@ const Slide = ()=>{
                             }
                         }, idx, false, {
                             fileName: "src/components/Slide/Slide.tsx",
-                            lineNumber: 62,
+                            lineNumber: 69,
                             columnNumber: 13
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/components/Slide/Slide.tsx",
-                    lineNumber: 60,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
-                    fileName: "src/components/Slide/Slide.tsx",
-                    lineNumber: 71,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, undefined)
             ]

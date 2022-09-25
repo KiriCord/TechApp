@@ -50,14 +50,15 @@ body {
 
 .slideshow {
   max-width: 90%;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
 
 .slideshow-container {
   justify-content: center;
+  padding: 20px 0;
   display: flex;
 }
 
@@ -67,7 +68,6 @@ body {
 }
 
 .arrow {
-  z-index: 1000;
   filter: invert();
   cursor: pointer;
   background-position: center;
@@ -75,17 +75,16 @@ body {
   padding: 20px;
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);
+  left: 50%;
 }
 
 .arrow-right {
-  right: 2%;
+  transform: translate(-50%, -50%);
 }
 
 .arrow-left {
   transform-origin: center;
-  left: 2%;
-  transform: translate(0, -50%)rotate(180deg);
+  transform: translate(-50%, -50%)rotate(180deg);
 }
 
 .slide {
@@ -111,6 +110,33 @@ body {
 
 .slideshowDot.active {
   background-color: #1e2e3b;
+}
+
+.slidefull {
+  z-index: 1000;
+  height: calc(100% - 4px);
+  width: 100px;
+  cursor: pointer;
+  position: relative;
+  transform: translate(0, -2px);
+}
+
+.slidefull-right:hover, .slidefull-left:hover {
+  background: #5a8bb066;
+}
+
+.slide-arrow-container {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+
+.slide-column {
+  flex-direction: column;
+  display: flex;
 }
 
 .logo-size {
