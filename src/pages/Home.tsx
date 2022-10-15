@@ -15,12 +15,13 @@ const Home = () => {
                     <hr />
                     <h3 className='text-center'>Список задач</h3>
                     <ol className='rectangle'>
+                        <li><Link to="/about">О себе</Link></li>
                         <li><Link to="/task1">Слайд-шоу</Link></li>
-                        <li><Link to="/task2">Неизвестно</Link></li>
-                        <li><Link to="/task3">Неизвестно</Link></li>
-                        <li><Link to="/task4">Неизвестно</Link></li>
+                        <li><Link to="/task2">Калькулятор</Link></li>
+                        <li><Link to="/task3">Корзина</Link></li>
+                        <li><Link to="/task4">Тесты</Link></li>
                         <li><Link to="/task5">Неизвестно</Link></li>
-                        <li><Link to="/task6">О себе</Link></li>
+                        <li><Link to="/task6">Неизвестно</Link></li>
                     </ol>
                 </div>
             </div>

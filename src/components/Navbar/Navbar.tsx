@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../../../public/icons/logo.svg";
 import Task1 from "../../pages/Task1";
 
@@ -10,9 +10,9 @@ const Navbar = () => {
       <div className="navbar">
         <Link className="navbar-logo" to="/">
           <img className="navbar-logo" src={logo} alt="" />
-
         </Link>
         <Link className="navbar-item" to="/">Главная</Link>
+        <Link className="navbar-item" to="/about">О себе</Link>
         <Link className="navbar-item" to="/task1">Задание 1</Link>
         <Link className="navbar-item" to="/task2">Задание 2</Link>
         <Link className="navbar-item" to="/task3">Задание 3</Link>

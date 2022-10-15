@@ -1,9 +1,19 @@
 import React from 'react';
+import Calc from '../components/Calculator/Calc';
 
 const Task2 = () => {
+
     return (
         <>
-            <h1>НЕИЗВЕСТНО </h1>
+            <div className='calcContainer f1'>
+                <div className='block block-hight'>
+                    <h3 className='text-center'>Калькулятор</h3>
+                    <hr />
+                    <div>
+                        <Calc />
+                    </div>
+                </div>
+            </div>
         </>
     );
 }

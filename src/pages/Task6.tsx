@@ -6,17 +6,7 @@ const Task6 = () => {
         <>
             <div className='container f1'>
                 <div className='block'>
-
-
-                    <div className='avatar-container '>
-                        <img className='avatar' src={img.avatar} alt="" />
-                    </div>
-                    <h2 className='text-center'> Рахманов Артур</h2>
-                    <hr />
-                    <h3 className='text-center'>О себе</h3>
-                    <p className='text-format text-format-font'>Являюсь студентом Башкирского государственного университета 1-го курса магистратуры.
-                        Направление подготовки: "Прикладная математика и информатика".
-                    </p>
+                    <h1>НЕИЗВЕСТНО </h1>
                 </div>
             </div>
         </>

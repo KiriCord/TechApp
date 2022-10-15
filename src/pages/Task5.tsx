@@ -3,7 +3,11 @@ import React from 'react';
 const Task5 = () => {
     return (
         <>
-            <h1>НЕИЗВЕСТНО </h1>
+            <div className='container f1'>
+                <div className='block'>
+                    <h1>НЕИЗВЕСТНО</h1>
+                </div>
+            </div>
         </>
     );
 }

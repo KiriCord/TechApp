@@ -1,0 +1,81 @@
+.calcContainer {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.outputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-hight {
+    height: auto;
+}
+
+button {
+    box-sizing: border-box;
+    margin: 3px;
+    width: 25%;
+    height: 50px;
+    min-width: 25%;
+    min-height: 25%;
+    font-weight: bold;
+    font-size: 25px;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    border: none;
+    background: rgb(109, 169, 214);
+}
+
+button:hover {
+    background: rgb(90, 139, 176);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}
+
+.indicatorList {
+    font-size: 0.75em;
+    line-height: 1;
+    opacity: 0.4;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25em;
+    min-height: 1em;
+}
+
+.expression {
+    margin-left: auto;
+}
+
+.screen {
+    font-size: 2.5em;
+    min-height: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.display {
+    background-color: #222d3b;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    color: #fff;
+    padding: 1.5em 1em;
+    border: 2px solid #5a8bb0;
+}
