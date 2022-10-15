@@ -32,73 +32,73 @@ export const Pad: FunctionComponent<PadProps> = ({
 
     return (
         <div className='buttonContainer'>
-            <button onClick={onMemoryRecallButtonClick}>
+            <button className='buttonCalc' onClick={onMemoryRecallButtonClick}>
                 MR
             </button>
-            <button onClick={onMemoryClearButtonClick}>
+            <button className='buttonCalc' onClick={onMemoryClearButtonClick}>
                 MC
             </button>
-            <button onClick={onMemoryPlusButtonClick}>
+            <button className='buttonCalc' onClick={onMemoryPlusButtonClick}>
                 M+
             </button>
-            <button onClick={onMemoryMinusButtonClick}>
+            <button className='buttonCalc' onClick={onMemoryMinusButtonClick}>
                 M-
             </button>
-            <button onClick={onAllClearButtonClick}>
+            <button className='buttonCalc' onClick={onAllClearButtonClick}>
                 AC
             </button>
-            <button onClick={onClearEntryButtonClick}>
+            <button className='buttonCalc' onClick={onClearEntryButtonClick}>
                 C
             </button>
-            <button onClick={() => onDigitButtonClick(7)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(7)}>
                 7
             </button>
-            <button onClick={() => onDigitButtonClick(8)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(8)}>
                 8
             </button>
-            <button onClick={() => onDigitButtonClick(9)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(9)}>
                 9
             </button>
-            <button onClick={() => onDigitButtonClick(4)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(4)}>
                 4
             </button>
-            <button onClick={() => onDigitButtonClick(5)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(5)}>
                 5
             </button>
-            <button onClick={() => onDigitButtonClick(6)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(6)}>
                 6
             </button>
-            <button onClick={() => onDigitButtonClick(1)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(1)}>
                 1
             </button>
-            <button onClick={() => onDigitButtonClick(2)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(2)}>
                 2
             </button>
-            <button onClick={() => onDigitButtonClick(3)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(3)}>
                 3
             </button>
-            <button onClick={() => onOperatorButtonClick('+')}>
+            <button className='buttonCalc' onClick={() => onOperatorButtonClick('+')}>
                 +
             </button>
-            <button onClick={() => onDigitButtonClick(0)}>
+            <button className='buttonCalc' onClick={() => onDigitButtonClick(0)}>
                 0
             </button>
-            <button onClick={() => onOperatorButtonClick('×')}>
+            <button className='buttonCalc' onClick={() => onOperatorButtonClick('×')}>
                 ×
             </button>
-            <button onClick={() => onOperatorButtonClick('-')}>
+            <button className='buttonCalc' onClick={() => onOperatorButtonClick('-')}>
                 -
             </button>
-            <button onClick={onPointButtonClick}>
+            <button className='buttonCalc' onClick={onPointButtonClick}>
                 .
             </button>
-            <button onClick={() => onOperatorButtonClick('÷')}>
+            <button className='buttonCalc' onClick={() => onOperatorButtonClick('÷')}>
                 ÷
             </button>
-            <button onClick={onChangeSignButtonClick}>
+            <button className='buttonCalc' onClick={onChangeSignButtonClick}>
                 -/+
             </button>
-            <button onClick={onEqualButtonClick}>
+            <button className='buttonCalc' onClick={onEqualButtonClick}>
                 =
             </button>
         </div>

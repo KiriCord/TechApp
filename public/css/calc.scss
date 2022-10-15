@@ -28,7 +28,7 @@
     height: auto;
 }
 
-button {
+.buttonCalc {
     box-sizing: border-box;
     margin: 3px;
     width: 25%;
@@ -42,7 +42,7 @@ button {
     background: rgb(109, 169, 214);
 }
 
-button:hover {
+.buttonCalc:hover {
     background: rgb(90, 139, 176);
     cursor: pointer;
     color: rgba(255, 255, 255, 1);
