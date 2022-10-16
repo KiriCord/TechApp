@@ -6,6 +6,7 @@ const Task4 = () => {
         <>
             <div className='container f1'>
                 <div className='block'>
+                    <h2 className='text-center'>Тесты</h2>
                     <Quiz />
                 </div>
             </div>
