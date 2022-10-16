@@ -40,7 +40,7 @@ const Item: FunctionComponent<Props> = ({ item, handleAddToCart }) => (
       <hr />
       <p>{item.description}</p>
       <hr />
-      <Button style={{ backgroundColor: '#435b76' }} variant="contained"><CurrencyRubleIcon />{item.price}</Button>
+      <Button style={{ backgroundColor: '#435b76' }} variant="contained" onClick={() => handleAddToCart(item)}><CurrencyRubleIcon />{item.price}</Button>
     </div>
     <Button style={{ backgroundColor: "#222d3b" }} variant="contained" onClick={() => handleAddToCart(item)}>Добавить в корзину</Button>
   </Wrapper >

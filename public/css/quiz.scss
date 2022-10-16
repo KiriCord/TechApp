@@ -1,0 +1,15 @@
+.li-block {
+    border: 2px solid #1e2e3b;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+
+    &:hover {
+        border: 2px solid #5a8bb0;
+    }
+}
+
+.ul-block {
+    list-style: none;
+}
