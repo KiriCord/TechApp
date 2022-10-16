@@ -6,23 +6,19 @@ import { CartItemType } from '../../Types/Types';
 import Cart from './Cart';
 import Item from './Item';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { AllProducts } from './AllProducts';
 
 const Wrapper = styled.div`
   margin: 40px;
 `;
-
-const getProducts = async (): Promise<CartItemType[]> =>
-    await (await fetch('https://fakestoreapi.com/products/category/electronics')).json();
-
 
 const Marketplace = () => {
     const [cartOpen, setCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([] as CartItemType[]);
     const { data, isLoading, error } = useQuery<CartItemType[]>(
         'products',
-        getProducts
+        AllProducts
     );
-    console.log(data);
 
     const getTotalItems = (items: CartItemType[]) =>
         items.reduce((ack: number, item) => ack + item.amount, 0);
