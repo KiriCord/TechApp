@@ -3,15 +3,13 @@ import { AllQuestions } from "./AllQuestions";
 import { FunProps, Quest, ResultProps, StepProps } from "../../Types/Types";
 import { LinearProgress } from "@mui/material";
 
-const Result: FC<ResultProps> = ({ correctVar }) => {
-    return (
-        <div>
-            <h1 className="text-center">Результат</h1>
-            <p className="text-center">Вы правильно ответили на {correctVar} из {AllQuestions.length}</p>
-            <p className="text-center">Ваша оценка: {Math.round((correctVar / AllQuestions.length) * 5)}</p>
-        </div>
-    );
-}
+const Result = ({ correctVar }: ResultProps) => (
+    <div>
+        <h1 className="text-center">Результат</h1>
+        <p className="text-center">Вы правильно ответили на {correctVar} из {AllQuestions.length}</p>
+        <p className="text-center">Ваша оценка: {Math.round((correctVar / AllQuestions.length) * 5)}</p>
+    </div>
+);
 
 const Test: FC<Quest & FunProps & StepProps> = ({ title, variants, onClickVar, step }) => {
     const percentage = Math.round(step / AllQuestions.length * 100);
