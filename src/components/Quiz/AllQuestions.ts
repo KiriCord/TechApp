@@ -9,13 +9,13 @@ export const AllQuestions: Quest[] =
             correctVariant: 1
         },
         {
-            id: 0,
+            id: 1,
             title: "Создатель современной архитектуры компьютеров",
             variants: ["Андерс Хейлсберг", "Альберт Эйнштейн", "Джон фон Нейман", "Стив Джобс"],
             correctVariant: 2
         },
         {
-            id: 0,
+            id: 2,
             title: "React - это ...",
             variants: ["Веб-сайт", "Фреймворк", "Приложение", "Библиотека"],
             correctVariant: 3
