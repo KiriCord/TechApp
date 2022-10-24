@@ -20,8 +20,8 @@ const Home = () => {
                         <li><Link to="/task2">Калькулятор</Link></li>
                         <li><Link to="/task3">Корзина</Link></li>
                         <li><Link to="/task4">Тесты</Link></li>
-                        <li><Link to="/task5">Неизвестно</Link></li>
-                        <li><Link to="/task6">Неизвестно</Link></li>
+                        <li><Link to="/task5">Карусель</Link></li>
+                        <li><Link to="/task6">Города и памятники</Link></li>
                     </ol>
                 </div>
             </div>
