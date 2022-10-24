@@ -60,7 +60,7 @@ const Monuments = () => {
                     </Select>
                 </FormControl>
                 <FormControl sx={{ m: 1, minWidth: 200 }}>
-                    <InputLabel sx={{ color: "#fff" }} id="monument-label">Монументы</InputLabel>
+                    <InputLabel sx={{ color: "#fff" }} id="monument-label">памятники</InputLabel>
                     <Select
                         labelId="monument-label"
                         id="monument"

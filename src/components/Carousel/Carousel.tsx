@@ -30,7 +30,6 @@ const Carousel = () => {
     const [cards, setCards] = React.useState(initialCards);
 
     const handleRotate = () => {
-        console.log('rotate');
         const newCards = cards.map((card, index) => {
             return {
                 ...card,
