@@ -12,7 +12,7 @@ const About = () => {
                         О себе
                     </Typography>
                     <Box sx={{ p: 2 }} display="flex" justifyContent="center" alignItems="center">
-                        <Avatar sx={{ bgcolor: "#A833FF", width: 200, height: 200 }}>Delta</Avatar>
+                        <Avatar sx={{ color: '#000', bgcolor: "#f9daff", width: 200, height: 200 }}>Delta</Avatar>
                     </Box>
                     <Typography align="center" variant="body1" gutterBottom>
                         Гайсина Аделя

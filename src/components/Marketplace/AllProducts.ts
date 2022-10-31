@@ -4,19 +4,19 @@ const Products = [
     {
         id: 0,
         category: "plants",
-        description: "Красивые цветочки.",
-        image: "https://ir.ozone.ru/s3/multimedia-u/wc1000/6132334950.jpg",
-        price: 11280,
-        title: "Лунная ночь",
+        description: "Вкусно и красиво.",
+        image: "https://oir.mobi/uploads/posts/2021-08/1629780107_5-oir-mobi-p-klubnika-v-shokolade-buket-tsveti-krasivo-6.jpg",
+        price: 6500,
+        title: "Букет с клубникой в шоколаде и цветами",
         amount: 500
     },
     {
         id: 1,
         category: "plants",
         description: "Букет красивых цветочков.",
-        image: "https://ir.ozone.ru/s3/multimedia-n/wc1000/6425103827.jpg",
-        price: 2500,
-        title: "Яркий день",
+        image: "https://buket-ug.ru/upload/iblock/236/23688c93a99068bc2fc326d90b727170.jpg",
+        price: 5500,
+        title: "Цветы в коробке",
         amount: 500
     },
     {
@@ -49,10 +49,10 @@ const Products = [
     {
         id: 5,
         category: "plants",
-        description: "Белое золото прямиком из здания с номером 5.",
-        image: "https://ir.ozone.ru/s3/multimedia-7/wc1000/6253204279.jpg",
+        description: "Уместен для любого стиля.",
+        image: "https://pro-dachnikov.com/uploads/posts/2021-10/1633480509_45-p-vazi-s-sukhotsvetami-v-interere-foto-46.jpg",
         price: 7999,
-        title: "Сухоцвет Хлопок",
+        title: "Сухоцвет для интерьера",
         amount: 500
     }
 ];
