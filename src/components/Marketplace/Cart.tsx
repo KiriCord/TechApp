@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { CartItemType } from '../../Types/Types';
 import { FunctionComponent } from 'react';
 import CartItem from './CartItem';
+import { Typography } from '@mui/material';
 
 const Wrapper = styled.aside`
   font-family: Arial, Helvetica, sans-serif;
@@ -20,8 +21,8 @@ const Cart: FunctionComponent<Props> = ({ cartItems, addToCart, removeFromCart }
         items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
     return (
         <Wrapper>
-            <h2>Ваша корзина</h2>
-            {cartItems.length === 0 ? <p>Корзина пуста.</p> : null}
+            <Typography sx={{ margin: '15px' }} variant='h4'>Ваша корзина</Typography>
+            {cartItems.length === 0 ? <Typography sx={{ margin: '15px' }} variant='body1'>Корзина пуста.</Typography> : null}
             {cartItems.map(item => (
                 <CartItem
                     key={item.id}
@@ -30,7 +31,7 @@ const Cart: FunctionComponent<Props> = ({ cartItems, addToCart, removeFromCart }
                     removeFromCart={removeFromCart}
                 />
             ))}
-            <h2>Итого: ₽{calculateTotal(cartItems).toFixed(2)}</h2>
+            <Typography sx={{ margin: '15px' }} variant='h4'>Общая сумма: ₽{calculateTotal(cartItems).toFixed(2)}</Typography>
         </Wrapper>
     );
 };

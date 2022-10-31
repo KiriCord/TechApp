@@ -1,27 +1,33 @@
 import { FC, useState } from "react";
 import { AllQuestions } from "./AllQuestions";
 import { FunProps, Quest, ResultProps, StepProps } from "../../Types/Types";
-import { LinearProgress } from "@mui/material";
+import { Box, LinearProgress, Typography, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 
 const Result = ({ correctVar }: ResultProps) => (
-    <div>
-        <h1 className="text-center">Результат</h1>
-        <p className="text-center">Вы правильно ответили на {correctVar} из {AllQuestions.length}</p>
-        <p className="text-center">Ваша оценка: {Math.round((correctVar / AllQuestions.length) * 5)}</p>
-    </div>
+    <Box>
+        <Typography sx={{ margin: "15px" }} align="center" variant="h3">Результат</Typography>
+        <Typography align="center" variant="body1">Вы правильно ответили на {correctVar} из {AllQuestions.length}</Typography>
+        <Typography align="center" variant="body1">Ваша оценка: {Math.round((correctVar / AllQuestions.length) * 5)}</Typography>
+    </Box>
 );
 
 const Test: FC<Quest & FunProps & StepProps> = ({ title, variants, onClickVar, step }) => {
     const percentage = Math.round(step / AllQuestions.length * 100);
     return (
         <>
-            <div style={{ padding: "20px" }}>
+            <Typography align="center" variant="h6">{title}</Typography>
+            <List>
+                {variants.map((text, index) =>
+                (<ListItem divider onClick={() => onClickVar(index)} key={text}>
+                    <ListItemButton style={{ textAlign: "center" }} >
+                        <ListItemText primary={text}></ListItemText>
+                    </ListItemButton>
+                </ListItem>
+                ))}
+            </List>
+            <Box style={{ padding: "20px" }}>
                 <LinearProgress variant="determinate" value={percentage} />
-            </div>
-            <h1 className="text-format">{title}</h1>
-            <ul className="text-format ul-block">
-                {variants.map((text, index) => (<li className="text-center li-block" onClick={() => onClickVar(index)} key={text}>{text}</li>))}
-            </ul>
+            </Box>
         </>
     );
 }

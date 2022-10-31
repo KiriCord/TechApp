@@ -1,25 +1,44 @@
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import logo from "../../../public/icons/logo.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
   return (
-    <nav>
-      <div className="navbar">
-        <Link className="navbar-logo" to="/">
-          <img className="navbar-logo" src={logo} alt="" />
-        </Link>
-        <Link className="navbar-item" to="/">Главная</Link>
-        <Link className="navbar-item" to="/about">О себе</Link>
-        <Link className="navbar-item" to="/task1">Задание 1</Link>
-        <Link className="navbar-item" to="/task2">Задание 2</Link>
-        <Link className="navbar-item" to="/task3">Задание 3</Link>
-        <Link className="navbar-item" to="/task4">Задание 4</Link>
-        <Link className="navbar-item" to="/task5">Задание 5</Link>
-        <Link className="navbar-item" to="/task6">Задание 6</Link>
-      </div>
-    </nav>
+    <>
+      <AppBar
+        position="static"
+        color="default"
+        elevation={0}
+        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+      >
+        <Toolbar sx={{ flexWrap: 'wrap' }}>
+          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            Современные компьютерные технологии
+          </Typography>
+          <nav>
+            <Button component={Link} to="/">
+              Главная
+            </Button>
+            <Button component={Link} to="/about">
+              О себе
+            </Button>
+            <Button component={Link} to="/slider">
+              Слайдер-карусель
+            </Button>
+            <Button component={Link} to="/calc">
+              Калькулятор
+            </Button>
+            <Button component={Link} to="/market">
+              Корзина
+            </Button>
+            <Button component={Link} to="/quiz">
+              Тест
+            </Button>
+          </nav>
+        </Toolbar>
+      </AppBar>
+    </>
   )
 }
 

@@ -3,12 +3,11 @@ import { Routes, Route, HashRouter } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import About from './pages/About';
 import Home from './pages/Home';
-import Task1 from './pages/Task1';
-import Task2 from './pages/Task2';
-import Task3 from './pages/Task3';
-import Task4 from './pages/Task4';
-import Task5 from './pages/Task5';
-import Task6 from './pages/Task6';
+import Slider from './pages/Slider';
+import Calculator from './pages/Calculator';
+import Market from './pages/Market';
+import Task4 from './pages/Tests';
+import Tests from './pages/Tests';
 
 const Router = () => {
 
@@ -18,12 +17,10 @@ const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/task1" element={<Task1 />} />
-                <Route path="/task2" element={<Task2 />} />
-                <Route path="/task3" element={<Task3 />} />
-                <Route path="/task4" element={<Task4 />} />
-                <Route path="/task5" element={<Task5 />} />
-                <Route path="/task6" element={<Task6 />} />
+                <Route path="/slider" element={<Slider />} />
+                <Route path="/calc" element={<Calculator />} />
+                <Route path="/market" element={<Market />} />
+                <Route path="/quiz" element={<Tests />} />
             </Routes>
         </HashRouter>
     );

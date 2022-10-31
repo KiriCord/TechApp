@@ -1,4 +1,4 @@
-import { Badge, Drawer, Grid, IconButton, LinearProgress } from '@mui/material';
+import { Badge, Drawer, Grid, Button, LinearProgress } from '@mui/material';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import styled from 'styled-components';
@@ -63,11 +63,11 @@ const Marketplace = () => {
                     removeFromCart={handleRemoveFromCart}
                 />
             </Drawer>
-            <IconButton style={{ color: '#000', backgroundColor: '#9dbffc', position: 'fixed', zIndex: 100, right: '50px', top: '50px' }} onClick={() => setCartOpen(true)} >
-                <Badge badgeContent={getTotalItems(cartItems)} color='error'>
-                    <AddShoppingCartIcon />
+            <Button style={{ color: '#000', backgroundColor: '#74546e', position: 'fixed', zIndex: 100, left: '50px', bottom: '50px' }} onClick={() => setCartOpen(true)} >
+                <Badge sx={{ color: '#fff' }} badgeContent={getTotalItems(cartItems)} color='error'>
+                    <AddShoppingCartIcon sx={{ color: '#fff' }} /> Корзина
                 </Badge>
-            </IconButton>
+            </Button>
             <Grid container spacing={3}>
                 {data?.map(item => (
                     <Grid item key={item.id} xs={12} sm={4}>
