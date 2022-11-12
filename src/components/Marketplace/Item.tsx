@@ -25,15 +25,20 @@ const Wrapper = styled.div`
 type Props = {
   item: CartItemType;
   handleAddToCart: (clickedItem: CartItemType) => void;
+  removeFromCart: (id: number) => void;
 }
 
-const Item: FunctionComponent<Props> = ({ item, handleAddToCart }) => (
+const Item: FunctionComponent<Props> = ({ item, handleAddToCart, removeFromCart }) => (
   <Wrapper>
     <img src={item.image} alt={item.title} />
     <Button style={{ backgroundColor: '#2fc84a' }} variant="contained" onClick={() => handleAddToCart(item)}><CurrencyRubleIcon />{item.price}</Button>
     <Box>
       <Typography sx={{ margin: '5px' }} variant='h5'>{item.title}</Typography>
       <Typography variant='body1'>{item.description}</Typography>
+    </Box>
+    <Box>
+      <Button style={{ backgroundColor: "#74546e" }} variant="contained" onClick={() => removeFromCart(item.id)}>-</Button>
+      <Button style={{ backgroundColor: "#74546e" }} variant="contained" onClick={() => handleAddToCart(item)}>+</Button>
     </Box>
     <Button style={{ backgroundColor: "#74546e" }} variant="contained" onClick={() => handleAddToCart(item)}>Добавить в корзину</Button>
   </Wrapper >

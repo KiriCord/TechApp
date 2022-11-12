@@ -3,12 +3,12 @@ import Router from "../Router";
 
 const App = () => {
 
-  return(
+  return (
     <div className="fullsize">
-      <Router/>
+      <Router />
     </div>
-    
-  )
+
+  );
 }
 
 export default App;

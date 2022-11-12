@@ -35,6 +35,12 @@ const Navbar = () => {
             <Button component={Link} to="/quiz">
               Тест
             </Button>
+            <Button component={Link} to="/ellipse">
+              Эллипс
+            </Button>
+            <Button component={Link} to="/calendar">
+              Календарь
+            </Button>
           </nav>
         </Toolbar>
       </AppBar>

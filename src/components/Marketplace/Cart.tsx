@@ -6,8 +6,6 @@ import { Typography } from '@mui/material';
 
 const Wrapper = styled.aside`
   font-family: Arial, Helvetica, sans-serif;
-  width: 500px;
-  padding: 20px;
 `;
 
 type Props = {
@@ -21,7 +19,7 @@ const Cart: FunctionComponent<Props> = ({ cartItems, addToCart, removeFromCart }
         items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
     return (
         <Wrapper>
-            <Typography sx={{ margin: '15px' }} variant='h4'>Ваша корзина</Typography>
+            <Typography sx={{ margin: '5px' }} variant='h5'>Ваша корзина</Typography>
             {cartItems.length === 0 ? <Typography sx={{ margin: '15px' }} variant='body1'>Корзина пуста.</Typography> : null}
             {cartItems.map(item => (
                 <CartItem
@@ -31,7 +29,7 @@ const Cart: FunctionComponent<Props> = ({ cartItems, addToCart, removeFromCart }
                     removeFromCart={removeFromCart}
                 />
             ))}
-            <Typography sx={{ margin: '15px' }} variant='h4'>Общая сумма: ₽{calculateTotal(cartItems).toFixed(2)}</Typography>
+            <Typography sx={{ margin: '15px' }} variant='h5'>Общая сумма: ₽{calculateTotal(cartItems).toFixed(2)}</Typography>
         </Wrapper>
     );
 };
