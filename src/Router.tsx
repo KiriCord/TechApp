@@ -23,7 +23,7 @@ const Router = () => {
                 <Route path="/market" element={<Market />} />
                 <Route path="/quiz" element={<Tests />} />
                 <Route path="/calendar" element={<Calendars />} />
-                <Route path="/ellipse" element={<Ellipse />} />
+                {/* <Route path="/ellipse" element={<Ellipse />} /> */}
             </Routes>
         </HashRouter>
     );
