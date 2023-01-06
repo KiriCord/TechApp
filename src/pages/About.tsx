@@ -7,19 +7,20 @@ const About = () => {
     return (
         <>
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-                <Paper elevation={3} variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                <Paper style={{backgroundColor: "#fdf8e3"}} elevation={3} variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                     <Typography component="h5" variant="h5" align="center">
                         О себе
                     </Typography>
+                    <Divider sx={{ p: 1 }} />
                     <Box sx={{ p: 2 }} display="flex" justifyContent="center" alignItems="center">
-                        <Avatar sx={{ color: '#000', bgcolor: "#f9daff", width: 200, height: 200 }}>Delta</Avatar>
+                        <Avatar variant="rounded" sx={{ color: '#ffd856', bgcolor: "#2d2a4b", width: 200, height: 200 }}>Дарья</Avatar>
                     </Box>
                     <Typography align="center" variant="body1" gutterBottom>
-                        Гайсина Аделя
+                    Дарья Боровская
                     </Typography>
                     <Divider sx={{ p: 1 }} />
                     <Typography sx={{ p: 1 }} align="center" variant="body1" gutterBottom>
-                        Студентка Башкирского государственного университета очного и заочного отделения. Работаю также в БашГУ.
+                        Учусь в Уфимском университете науки и технологий на факультете математики и информационных технологий.
                     </Typography>
                     <Box display="flex" justifyContent="center" alignItems="center">
                         <Button href="https://vk.com/id0" > VK</Button>

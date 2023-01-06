@@ -16,14 +16,14 @@ const Router = () => {
         <HashRouter>
             <Navbar />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
+                {/* <Route path="/" element={<Home />} /> */}
+                <Route path="/" element={<About />} />
                 <Route path="/slider" element={<Slider />} />
                 <Route path="/calc" element={<Calculator />} />
                 <Route path="/market" element={<Market />} />
                 <Route path="/quiz" element={<Tests />} />
-                <Route path="/calendar" element={<Calendars />} />
-                <Route path="/ellipse" element={<Ellipse />} />
+                {/* <Route path="/calendar" element={<Calendars />} /> */}
+                {/* <Route path="/ellipse" element={<Ellipse />} /> */}
             </Routes>
         </HashRouter>
     );

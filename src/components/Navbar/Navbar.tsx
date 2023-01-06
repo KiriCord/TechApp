@@ -9,6 +9,7 @@ const Navbar = () => {
       <AppBar
         position="static"
         color="default"
+        style={{backgroundColor: "#fdf8e3"}}
         elevation={0}
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
       >
@@ -18,9 +19,6 @@ const Navbar = () => {
           </Typography>
           <nav>
             <Button component={Link} to="/">
-              Главная
-            </Button>
-            <Button component={Link} to="/about">
               О себе
             </Button>
             <Button component={Link} to="/slider">
@@ -35,12 +33,12 @@ const Navbar = () => {
             <Button component={Link} to="/quiz">
               Тест
             </Button>
-            <Button component={Link} to="/ellipse">
+            {/* <Button component={Link} to="/ellipse">
               Эллипс
             </Button>
             <Button component={Link} to="/calendar">
               Календарь
-            </Button>
+            </Button> */}
           </nav>
         </Toolbar>
       </AppBar>

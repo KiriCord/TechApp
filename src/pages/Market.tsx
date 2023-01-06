@@ -70,7 +70,7 @@ const Market = () => {
             <Container component="main" maxWidth="xl">
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={3} lg={4}>
-                        <Paper sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                        <Paper style={{backgroundColor: "#fdf8e3"}} sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                             <Box>
                                 <Cart
                                     cartItems={cartItems}
@@ -82,11 +82,10 @@ const Market = () => {
                         </Paper>
                     </Grid>
                     <Grid item xs={12} md={6} lg={8}>
-                        <Paper sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                        <Paper style={{backgroundColor: "#fdf8e3"}} sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                             <Typography component="h5" variant="h5" align="center">
-                                Магазин
+                                Лавка с едой
                             </Typography>
-                            <Divider sx={{ p: 1 }} />
                             <QueryClientProvider client={client} >
                                 <Marketplace
                                     handleAddToCart={handleAddToCart}

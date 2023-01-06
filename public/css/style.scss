@@ -4,8 +4,16 @@
 }
 
 body {
-    background: rgb(253, 244, 255);
-    background: linear-gradient(90deg, rgba(253, 244, 255, 1) 0%, rgba(249, 218, 255, 1) 100%);
+    // background: rgb(253, 244, 255);
+    // background: linear-gradient(90deg, rgba(253, 244, 255, 1) 0%, rgba(249, 218, 255, 1) 100%);
+    background-image: url(../img/walp.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .calcContainer {
@@ -49,12 +57,13 @@ body {
     font-size: 25px;
     box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
     border: none;
+    background-color: #2d2a4b;
 }
 
 .buttonCalc:hover {
     cursor: pointer;
-    color: rgb(255, 226, 248);
-    background-color: #75566e;
+    color: #ffd856;
+    background-color: #2d2a4b;
 }
 
 .indicatorList {
@@ -82,9 +91,9 @@ body {
 }
 
 .display {
-    background-color: #75566e;
+    background-color: #2d2a4b;
     box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
-    color: rgb(255, 226, 248);
+    color: #ffd856;
     padding: 1.5em 1em;
     margin: 2px;
 }

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { AllQuestions } from "./AllQuestions";
 import { FunProps, Quest, ResultProps, StepProps } from "../../Types/Types";
-import { Box, LinearProgress, Typography, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import { Box, LinearProgress, Typography, List, ListItem, ListItemButton, ListItemText, Divider } from "@mui/material";
 
 const Result = ({ correctVar }: ResultProps) => (
     <Box>
@@ -11,11 +11,16 @@ const Result = ({ correctVar }: ResultProps) => (
     </Box>
 );
 
-const Test: FC<Quest & FunProps & StepProps> = ({ title, variants, onClickVar, step }) => {
+const Test: FC<Quest & FunProps & StepProps> = ({ title, img, variants, onClickVar, step }) => {
     const percentage = Math.round(step / AllQuestions.length * 100);
     return (
         <>
+        <Typography align="center" variant="h5">Тест</Typography>
+        <Divider sx={{ p: 1 }} />
             <Typography align="center" variant="h6">{title}</Typography>
+            <Box alignItems="center" flexDirection="column" display="flex">
+                <img src={img} alt={title} style={{height:"300px", width: "auto"}}/>
+            </Box>     
             <List>
                 {variants.map((text, index) =>
                 (<ListItem divider onClick={() => onClickVar(index)} key={text}>

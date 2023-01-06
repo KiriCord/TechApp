@@ -31,7 +31,7 @@ type Props = {
 };
 
 const CartItem: FunctionComponent<Props> = ({ item, addToCart, removeFromCart }) => (
-  <Card elevation={3} sx={{ display: 'flex', margin: 1 }}>
+  <Card style={{backgroundColor: "#fffee6"}} elevation={3} sx={{ display: 'flex', margin: 1 }}>
     <Box sx={{ display: 'flex', flexDirection: 'column', width: "100%" }}>
       <CardContent sx={{ flex: '1 0 auto' }}>
         <Typography component="div" variant="body1">

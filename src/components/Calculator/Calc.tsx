@@ -148,6 +148,50 @@ export const Calc: FunctionComponent = () => {
         setWaitingForOperand(true);
     };
 
+    const onSqrt = () => {
+        const value = Number(display)
+
+        if (value > 0) {
+            const result  = Math.sqrt(value)
+            // setResult(result);
+            setDisplay(result.toString());
+            setWaitingForOperand(true);
+        } 
+    };
+
+    const onSin = () => {
+        const value = Number(display)
+
+        if (value > 0) {
+            const result  = Math.sin(value)
+            // setResult(result);
+            setDisplay(result.toString());
+            setWaitingForOperand(true);
+        } 
+    };
+
+    const onCos = () => {
+        const value = Number(display)
+
+        if (value > 0) {
+            const result  = Math.cos(value)
+            // setResult(result);
+            setDisplay(result.toString());
+            setWaitingForOperand(true);
+        } 
+    };
+
+    const onTan = () => {
+        const value = Number(display)
+
+        if (value > 0) {
+            const result  = Math.tan(value)
+            // setResult(result);
+            setDisplay(result.toString());
+            setWaitingForOperand(true);
+        } 
+    };
+
     return (
         <>
             <Display value={display} hasMemory={memory !== 0} expression={typeof pendingOperator !== 'undefined' ? `${result}${pendingOperator}${waitingForOperand ? '' : display}` : ''} />
@@ -163,6 +207,10 @@ export const Calc: FunctionComponent = () => {
                 onMemoryClearButtonClick={onMemoryClearButtonClick}
                 onMemoryPlusButtonClick={onMemoryPlusButtonClick}
                 onMemoryMinusButtonClick={onMemoryMinusButtonClick}
+                onSqrt={onSqrt}
+                onSin={onSin}
+                onCos={onCos}
+                onTan={onTan}
             />
         </>
     )
