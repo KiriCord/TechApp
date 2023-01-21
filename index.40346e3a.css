@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-image: url("walp.c70c1d63.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.calcContainer {
+  width: 40%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+  display: flex;
+}
+
+.outputContainer {
+  width: 100%;
+  justify-content: center;
+  padding: 20px 0;
+  display: flex;
+}
+
+.buttonContainer {
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.block-hight {
+  height: auto;
+}
+
+.buttonCalc {
+  box-sizing: border-box;
+  width: 25%;
+  height: 50px;
+  min-width: 25%;
+  min-height: 25%;
+  background-color: #2d2a4b;
+  border: none;
+  margin: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px -5px #223c5099;
+}
+
+.buttonCalc:hover {
+  cursor: pointer;
+  color: #ffd856;
+  background-color: #2d2a4b;
+}
+
+.indicatorList {
+  opacity: .4;
+  text-align: right;
+  min-height: 1em;
+  justify-content: space-between;
+  margin-bottom: .25em;
+  font-size: .75em;
+  line-height: 1;
+  display: flex;
+}
+
+.expression {
+  margin-left: auto;
+}
+
+.screen {
+  min-height: 1.4em;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2.5em;
+  display: flex;
+  overflow: hidden;
+}
+
+.display {
+  color: #cae3ed;
+  background-color: #365170;
+  border-radius: 7px;
+  margin: 2px;
+  padding: 1.5em 1em;
+  box-shadow: 5px 5px 5px -5px #223c5099;
+}
+
+/*# sourceMappingURL=index.40346e3a.css.map */
